@@ -75,22 +75,27 @@ def apply_functions(function_list, value):
 def find_max(x, y):
     return x if x > y else y
 
+
 def reduce_demo(number_list):
     maximum = reduce(find_max, number_list)
     print(f"The highest number in the list: {maximum}")
 
+
 def sum_numbers(x, y):
     return x + y
 
+
 def average(number_list):
     list_sum = reduce(sum_numbers, number_list)
-    return list_sum/len(number_list)
+    return list_sum / len(number_list)
+
 
 def fibonacci_generator():
     a, b = 0, 1
     while True:
         yield a
         a, b = b, a + b
+
 
 def read_large_file(file_path):
     with open(file_path, 'r') as file:
