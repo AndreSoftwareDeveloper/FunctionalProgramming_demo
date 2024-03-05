@@ -56,11 +56,14 @@ def check_if_word_starts_with_lettter(word_list):
         return True
     return False
 
+
 def square_power(number):
     return number ** 2
 
+
 def add_5(number):
     return number + 5
+
 
 def apply_functions(function_list, value):
     value = function_list[0](value)
