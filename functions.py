@@ -1,4 +1,5 @@
 import re
+from functools import reduce
 
 global global_variable
 global_variable = 31
@@ -47,11 +48,11 @@ def return_even_numbers(numbers_array):
 
 
 def filter_demo(word_list):
-    starting_with_a = filter(check_if_word_starts_with_lettter, word_list)
+    starting_with_a = filter(check_if_word_starts_with_letter, word_list)
     return starting_with_a
 
 
-def check_if_word_starts_with_lettter(word_list):
+def check_if_word_starts_with_letter(word_list):
     if word_list[0] == 'a':
         return True
     return False
@@ -69,3 +70,29 @@ def apply_functions(function_list, value):
     value = function_list[0](value)
     value = function_list[1](value)
     return value
+
+
+def find_max(x, y):
+    return x if x > y else y
+
+def reduce_demo(number_list):
+    maximum = reduce(find_max, number_list)
+    print(f"The highest number in the list: {maximum}")
+
+def sum_numbers(x, y):
+    return x + y
+
+def average(number_list):
+    list_sum = reduce(sum_numbers, number_list)
+    return list_sum/len(number_list)
+
+def fibonacci_generator():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+def read_large_file(file_path):
+    with open(file_path, 'r') as file:
+        for line in file:
+            yield line.strip()

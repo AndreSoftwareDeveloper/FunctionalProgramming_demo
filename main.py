@@ -1,6 +1,6 @@
 import math
 from functions import regex_demo, global_variable_demo, return_even_numbers, predefined_functions_demo, \
-    function_as_argument, filter_demo, square_power, add_5, apply_functions
+    function_as_argument, filter_demo, square_power, add_5, apply_functions, reduce_demo, average
 
 if __name__ == '__main__':
     predefined_functions_demo()
@@ -38,7 +38,12 @@ if __name__ == '__main__':
     for word in word_list:
         print(word)
 
-    words_lenghts = [ len(word) for word in word_list ]
+    words_lenghts = [len(word) for word in word_list]
     print("\nLengths of these words:")
     for length in words_lenghts:
         print(length)
+
+    numbers = [10, 20, 5, 45, 60, 12]
+    reduce_demo(numbers)
+
+    print(f"Average of the numbers: {average(numbers)}")
